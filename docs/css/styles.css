@@ -1,0 +1,191 @@
+/*
+This file is part of the mitoTree project and authored by Noah Hurmer.
+
+Copyright 2024, Noah Hurmer & mitoTree.
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at https://mozilla.org/MPL/2.0/.
+*/
+
+
+/* overall styling */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+/* make headers smaller */
+h1 {
+    font-size: 1.9rem;
+}
+h2 {
+    font-size: 1.6rem;
+}
+
+/* main container */
+.container {
+    width: 100%;
+    max-width: 1400px; /* maximum width of page content */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* navbar styling */
+/* readded margin to the content */
+.navbar {
+    margin-bottom: 20px;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    font-size: 0.6rem;
+}
+/* gradient of navbar */
+.bg-gradient-green {
+    background: linear-gradient(90deg, lightgrey, green);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* navbar brank aka 'Viewer' */
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* logo image */
+.navbar-brand img {
+    margin-right: 15px;
+    height: 4.5vh; /* logo size */
+}
+
+/* navbar links */
+.navbar-nav .nav-link {
+    color: #f8f9fa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+/* hover changes */
+.navbar-nav .nav-link:hover {
+    background-color: #cce7cc;
+    color: #004d00;
+}
+
+/* dropdown menu for resources */
+.nav-item.dropdown .dropdown-menu {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* pages within dropdown */
+.dropdown-item {
+    color: #004d00;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+.dropdown-item:hover {
+    background-color: #cce7cc;
+    color: #004d00;
+}
+
+/* navbar toggler when view window is small */
+.navbar-toggler {
+    border: none;
+    background-color: #28a745;
+}
+
+
+/* footer styling */
+.footer {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+
+/* subtle card used on home page */
+.subtle-card {
+    border-radius: 10px;
+    border: none;
+    width: 80%; /* to make it smaller than column */
+}
+.subtle-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.subtle-card .card-text {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+
+/* regular card */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.card-text a {
+    color: #007bff; /* color for links */
+}
+.card-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        margin-bottom: 15px;
+    }
+    .footer {
+        font-size: 0.8em;
+    }
+    .switch {
+        width: 200px;
+    }
+    .switch-label, .switch-selector {
+        font-size: 10px;
+        width: 67px;
+    }
+}
+
+/* round only the right corners of the search button for the haplogroups page */
+.btn-primary.rounded-end {
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* I icon that links to docu page */
+.info-icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: #198754;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.info-icon:hover {
+    color: #0056b3;
+}
+
+
+/* button present on explore and haplogroups page to go back up top */
+#toTopButton {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    display: none; /* Initially hidden */
+}

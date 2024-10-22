@@ -1,0 +1,46 @@
+<!--
+This file is part of the mitoTree project and authored by Noah Hurmer.
+
+Copyright 2024, Noah Hurmer & mitoTree.
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/mitoTree-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mitoTree - Haplogroup</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/treeStyles.css">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-container"></div>
+
+<div class="container mt-4">
+    <div id="node-details" class="card p-3 mb-4"></div>
+    <!-- Card with Haplogroup Info is generated in js here -->
+
+    <!-- Subtree Button -->
+    <button id="view-subtree-button" class="btn btn-primary mb-3 btn-sm">View Subtree</button>
+</div>
+
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script src="js/lib_files/bootstrap.bundle.min.js"></script>
+<script src="js/loadTemplates.js"></script>
+<script src="js/lib_files/d3.v7.min.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/trees/collapsibleTree.js"></script>
+<script src="js/nodeInfo.js"></script>
+</body>
+</html>

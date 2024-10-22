@@ -1,0 +1,98 @@
+<!--
+This file is part of the mitoTree project and authored by Noah Hurmer.
+
+Copyright 2024, Noah Hurmer & mitoTree.
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/mitoTree-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mitoTree - Haplogroups</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/treeStyles.css">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-container"></div>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="header-container" style="display: flex; align-items: center; margin-bottom:1%">
+        <h1>Haplogroups</h1>
+        <a href="documentation.html" title="More information" class="info-icon">ⓘ</a>
+    </div>
+
+    <!-- Id search -->
+    <div class="d-flex mb-3 align-items-center" style="width: 100%;">
+        <div class="input-group align-items-center me-3 input-group-sm">
+            <input type="text" id="node-search-input" class="form-control" placeholder="Search by ID">
+            <button id="search-button" class="btn btn-primary btn-sm rounded-end">Search</button>
+
+            <div class="form-check form-switch ms-3 d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="case-toggle" checked>
+                <label for="case-toggle" class="form-check-label me-2 mb-0">Case Sensitive</label>
+            </div>
+        </div>
+        <button id="reset-button" class="btn btn-secondary btn-sm" style="white-space: nowrap; margin-left: 5%">Reset Search</button>
+        <button id="download-button" class="btn btn-success btn-sm" style="white-space: nowrap; margin-left: 2%">Download CSV</button>
+    </div>
+
+    <!-- HG search -->
+    <div class="input-group mb-3 input-group-sm">
+        <input type="text" id="nodeHG-search-input" class="form-control" placeholder="Search by HG Signature">
+        <button id="searchHG-button" class="btn btn-primary rounded-end">Search</button>
+
+        <!-- Toggle Switch -->
+        <div class="d-flex align-items-center ms-3">
+            <label for="search-mode-toggle" class="form-check-label me-2 mb-0">Exact Signature</label>
+            <div class="form-check form-switch d-flex align-items-center">
+                <input class="form-check-input" type="checkbox" id="search-mode-toggle">
+            </div>
+            <label for="search-mode-toggle" class="form-check-label me-2 mb-0">Has Mutation</label>
+        </div>
+    </div>
+    <!-- Search Counter -->
+    <div id="search-results-counter" style="display: none; margin-bottom: 10px; margin-left: 10px;">
+        <p id="search-results-text"></p>
+    </div>
+
+    <!-- to top button -->
+    <button id="toTopButton" class="btn btn-secondary btn-sm" title="Go to top">Back Top</button>
+
+    <!-- nodes List Table -->
+    <div id="nodes-list">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>HG - Signature</th>
+                </tr>
+            </thead>
+            <tbody id="nodes-table-body">
+                <!-- rows are dynamically generated -->
+            </tbody>
+        </table>
+        <button id="show-more-button" class="btn btn-primary btn-sm" style="display: none;">Show More</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+
+<script src="js/lib_files/bootstrap.bundle.min.js"></script>
+<script src="js/loadTemplates.js"></script>
+<script src="js/lib_files/d3.v7.min.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/haplogroups.js"></script>
+</body>
+</html>

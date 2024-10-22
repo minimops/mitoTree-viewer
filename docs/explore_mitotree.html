@@ -1,0 +1,111 @@
+<!--
+This file is part of the mitoTree project and authored by Noah Hurmer.
+
+Copyright 2024, Noah Hurmer & mitoTree.
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/mitoTree-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mitoTree - Explore</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/treeStyles.css">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-container"></div>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="header-container" style="display: flex; align-items: center; margin-bottom:1%">
+        <h1>Explore mitoTree</h1>
+        <a href="documentation.html" title="More information" class="info-icon">ⓘ</a>
+    </div>
+
+    <!-- Tree controls row -->
+    <div id="tree-controls" class="mb-3">
+        <button id="reset-tree-button" class="btn btn-info btn-sm">Reset Tree</button>
+        <button id="expand-tree-button" class="btn btn-info btn-sm">Expand Fully</button>
+        <button id="download-button" class="btn btn-success btn-sm">Download SVG</button>
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- 3 way Toggle Switch -->
+                <!-- Original code by Benjamin Sterling, copied from  https://codepen.io/ben_sterling/pen/oxVmjG -->
+                <div class="toggle-container">
+                    <div class="info-text">On-Click Effect:</div>
+                    <div class="switch">
+                        <input id="switch-y" name="tripple" type="radio" value="Y" class="switch-input"/>
+                        <label for="switch-y" class="switch-label switch-label-y">Expand fully</label>
+                        <input id="switch-i" name="tripple" type="radio" value="I" class="switch-input" checked/>
+                        <label for="switch-i" class="switch-label switch-label-i">Expand</label>
+                        <input id="switch-n" name="tripple" type="radio" value="N" class="switch-input"/>
+                        <label for="switch-n" class="switch-label switch-label-n">Node info</label>
+                        <span class="switch-selector"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Search controls row -->
+        <div id="search-controls" class="d-flex align-items-center mb-3">
+            <div class="input-group me-3 input-group-sm">
+                <input type="text" id="search-input" class="form-control d-inline-block" placeholder="Search Node by Id..." style="width: auto;">
+                <button id="search-button" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+        <span id="search-results" class="me-3"></span>
+        <button id="prev-button" class="btn btn-secondary btn-sm">Prev</button>
+        <button id="next-button" class="btn btn-secondary btn-sm">Next</button>
+    </div>
+
+
+
+    <!-- to top button -->
+    <button id="toTopButton" class="btn btn-secondary" title="Go to top">Back Top</button>
+
+    <!-- Collapsible tree container -->
+    <div id="collapsible-tree">
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const treeControls = document.getElementById('tree-controls');
+
+    // Function to handle switching between absolute and sticky positioning
+    function adjustTreeControlsPosition() {
+        if (window.scrollY < 10) {
+            treeControls.classList.add('initial');
+            treeControls.classList.remove('sticky');
+        } else {
+            treeControls.classList.remove('initial');
+            treeControls.classList.add('sticky');
+        }
+    }
+
+    // Run on page load
+    adjustTreeControlsPosition();
+
+    // Add scroll listener to adjust positioning based on page scroll
+    window.addEventListener('scroll', adjustTreeControlsPosition);
+});
+</script>
+<script src="js/lib_files/bootstrap.bundle.min.js"></script>
+<script src="js/loadTemplates.js"></script>
+<script src="js/lib_files/d3.v7.min.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/mitoTree.js"></script>
+<script src="js/trees/collapsibleTree.js"></script>
+</body>
+</html>
