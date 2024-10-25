@@ -47,7 +47,7 @@
         "versions": [
             {
                 "format": "Haplogroup - Accession",
-                "fileName": "mito-representatives.csv"
+                "fileName": "mito_representatives.csv"
             },
             {
                 "format": "Accession - Attributes",
